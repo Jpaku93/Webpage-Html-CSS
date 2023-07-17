@@ -1,0 +1,243 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------ nav bar -----------*/
+#menu {
+  width: 65%;
+  height: 8%;
+  display: flex;
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#menu a {
+  text-decoration: none;
+  color: red;
+  padding: 20px;
+  font-size: 80px;
+  position: relative;
+}
+
+#menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu a:hover::after {
+  transform: scaleX(1);
+}
+
+#menu a:hover {
+  color: white;
+}
+
+
+/* ------------ home page -----------*/
+.image-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.spinning-ball {
+  position: absolute;
+  top: 49%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  animation: spin 4s infinite linear;
+}
+
+.scaled-man {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.8);
+}
+.product-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10%;
+}
+
+.product-item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  height: 1600px; /* Set a fixed height for each container */
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px; /* Add margin-bottom to create gaps between containers */
+
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70%; /* Adjust the height of the image container */
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-description {
+  font-size: 66px;
+  margin-top: 20px; /* Increase the margin-top value for more space between image and description */
+}
+
+
+.add-to-cart {
+  background-color: rgb(28, 29, 29);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 66px;
+  cursor: pointer;
+}
+
+/* ----------- About Us Page ---------------*/
+
+.about-container {
+  width: 75%;
+  max-width: 2400px;
+  margin: 10% auto; /* Adjust the margin as desired */
+  color: white;
+  font-size: 75px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.about-container h1 {
+  color: red;
+  font-family: serif;
+  text-align: left;
+}
+
+.about-container img {
+  width: 35%;
+  height: auto;
+  object-fit: contain;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px; /* Add margin-bottom to create space below the image */
+}
+
+.history-container {
+  width: 75%;
+  max-width: 2400px;
+  margin: 10% auto; /* Adjust the margin as desired */
+  color: white;
+  font-size: 75px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.history-container h1 {
+  color: red;
+  font-family: serif;
+  text-align: left;
+}
+.contact-container {
+  width: 75%;
+  max-width: 2400px;
+  margin: 10% auto;
+  color: white;
+  font-size: 75px;
+  padding: 20px;
+}
+
+.contact-container h1 {
+  color: red;
+  font-family: serif;
+  text-align: left;
+}
+
+.contact-container a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+
+.contact-container a:hover {
+  color: red; /* Change the text color on hover */
+}
+
+.contact-container i {
+  margin-right: 10px;
+}
+
+/* ----------- Videos Page ---------------*/
+#thumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height to occupy the full viewport height */
+}
+
+
+.thumb {
+  position: relative;
+  margin-right: 10px;
+}
+
+.thumb img {
+  width: 200px;
+  height: auto;
+}
+
+.playvideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-image: url('play-icon.png'); /* Replace with your play icon image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.vid-thumbnail-title {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.8);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1.8);
+  }
+}
