@@ -195,43 +195,150 @@ body {
   margin-right: 10px;
 }
 
+/* ----------- Athletes Page ---------------*/
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align items vertically */
+  transform: translate(0, 40%);
+  /* overflow-y: scroll; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-right: 80px;
+  float :left;
+  
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: red;
+  padding: 20px;
+  font-size: 80px;
+  position: relative;
+}
+
+#sidebar h1 {
+  color: white;
+  padding: 20px;
+  font-size: 80px;
+  position: relative;
+}
+
+#sidebar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+#sidebar a:hover::after {
+  transform: scaleX(1);
+}
+
+#sidebar a:hover {
+  color: white;
+}
+
+#sidebar h1{
+  border-bottom-style: double;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.main-container{
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  /* align-items: center; */
+  /* margin-top: 10%; */
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  color: white;
+  font-size: 75px;
+  padding: 10px;
+  overflow: hidden;
+}
+.athlete-content{
+  top : -50%;
+  flex-direction: row; 
+  overflow-y: scroll;
+  float : left;
+
+}
+.athlete-content-image-container{
+  display:flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  border-bottom: solid;
+}
+.Athlete-Title h1{
+  font-size: 99px;
+  margin-top: 120px;
+  color : #fff;
+}
+.athlete-content-image-container h2{
+  font-size: 68px;
+  margin-top: 120px;
+  color : #fff;
+}
+.athlete-images{
+  font-size: 18px;
+  padding: 10px 0;
+}
+.img-size-half {
+  width: 50em;
+  height: 50em;
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+} 
+
+
 /* ----------- Videos Page ---------------*/
-#thumbs {
+.carousel-container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height to occupy the full viewport height */
 }
 
-
-.thumb {
-  position: relative;
-  margin-right: 10px;
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.thumb img {
-  width: 200px;
-  height: auto;
-}
-
-.playvideo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background-image: url('play-icon.png'); /* Replace with your play icon image */
-  background-size: cover;
-  background-repeat: no-repeat;
+.carousel-item {
+  margin: 10px 0;
   cursor: pointer;
 }
 
-.vid-thumbnail-title {
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: center;
+.carousel-item img {
+  width: 100px;
+  height: auto;
 }
+
+.main-frame {
+  margin-top: 10px;
+}
+
 
 @keyframes spin {
   0% {

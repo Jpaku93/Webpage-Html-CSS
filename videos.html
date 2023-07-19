@@ -10,25 +10,31 @@
     <a href="home.html">Home</a>
     <a href="merchandise.html">Merchandise</a>
     <a href="about.html">About</a>
-    <a href="/image-gallery">Gallery</a>
+    <a href="image-gallery.html">Gallery</a>
     <a aria-current="page" class="active" href="videos.html">Videos</a>
-    <a href="/athletes">Athletes</a>
-    <a href="/news">News</a>
-    <a href="/sponsors">Sponsors</a>
+    <a href="athletes.html">Athletes</a>
+    <a href="news.html">News</a>
+    <a href="sponsors.html">Sponsors</a>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="https://i.ytimg.com/vi/Tas2VlQZRLY/mqdefault.jpg" alt="">
-        <div class="vid-thumbnail-title">Making do with the Pit gear handed out during Covid 19 lockdown</div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item active">
+        <img src="https://i.ytimg.com/vi/Tas2VlQZRLY/mqdefault.jpg" alt="Video 1" data-video="video1.mp4">
       </div>
-      <div class="swiper-slide">
-        <img src="https://i.ytimg.com/vi/LksEcfQbpbQ/mqdefault.jpg" alt="">
-        <div class="vid-thumbnail-title">Carry medley on the menu with the Pit whanau</div>
+      <div class="carousel-item">
+        <img src="https://i.ytimg.com/vi/LksEcfQbpbQ/mqdefault.jpg" alt="Video 2" data-video="video2.mp4">
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.ytimg.com/vi/LksEcfQbpbQ/mqdefault.jpg" alt="Video 3" data-video="video3.mp4">
       </div>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="main-frame">
+      <video id="video-player" controls autoplay>
+        <source id="video-source" src="" type="video/mp4">
+      </video>
+    </div>
   </div>
+
     <!-- </div>
     <div class="vid-thumbnail">
       <img src="https://i.ytimg.com/vi/seHdPTBBb9Y/mqdefault.jpg" alt="">
@@ -192,6 +198,5 @@
       </div>
     </div> -->
 <!-- </div> -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
