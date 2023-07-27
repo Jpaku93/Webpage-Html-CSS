@@ -1,33 +1,52 @@
-body {
-  background-color: black;
-  margin: 0;
+
+*{
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 /* ------------ nav bar -----------*/
-#menu {
-  width: 65%;
-  height: 8%;
-  display: flex;
-  position: fixed;
-  top: 4%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
+nav{
+  background: #1f2224;
+  height: 80px;
+  width: 100%;
+  
 }
 
-#menu a {
-  text-decoration: none;
+nav ul{
+  float: right;
+  margin-right: 20px;
+ 
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 2px;
+  
+}
+nav ul li a{
   color: red;
-  padding: 20px;
-  font-size: 80px;
-  position: relative;
+  font-size: 17px;
+  padding: 7px 13px;
+  transform: uppercase;
+  text-decoration: none;
+  transition: .4s;
 }
 
-#menu a::after {
+a.active,a:hover{
+  /* background: #fff; */
+  color: white;
+  border-radius: 2px;
+  border-bottom: 2px solid white;
+}
+
+nav ul li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -39,12 +58,130 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-#menu a:hover::after {
-  transform: scaleX(1);
+nav ul li a:hover::after {
+  transform: scaleX(1); /* Change scaleX(0) to scaleX(1) to show the underline on hover */
 }
 
-#menu a:hover {
+.checkbtn{
+  font-size: 30px;
   color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #323536;
+    top: -100%;
+    left: 0;
+    text-align: center;
+    transition: all .5s;
+    
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+    
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: white;
+  }
+  #check:checked ~ ul{
+    top: 80px;
+    
+  }
+}
+/* ----------- Athletes Page ---------------*/
+
+.gall{
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+
+
+}
+.athlete-gallery{
+  width: 80%;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 3px 3px;
+  flex-direction: row;
+}
+img {
+  max-width: 300px;
+  height: 100%; 
+  
+}
+.athlete-gallery img:hover{
+  transform: scale(1.05);
+  border-radius: 20px;
+  cursor: pointer;
+
+ 
+}
+.full-img{
+  width:100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  position:fixed;
+  top:0;
+  left:0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.full-img img{
+  width: 90%;
+  max-width:500px;
+  max-height: 80%;
+  border-radius: 20px;
+}
+.full-img span{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+.athlete-menu-closed{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 250px;
+  background: #1f2224;
+  z-index: 100;
+  /* transition: all 0.5s ease; */
+  float:right;
 }
 
 
@@ -194,120 +331,6 @@ body {
 .contact-container i {
   margin-right: 10px;
 }
-
-/* ----------- Athletes Page ---------------*/
-#sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Align items vertically */
-  transform: translate(0, 40%);
-  /* overflow-y: scroll; */
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-right: 80px;
-  float :left;
-  
-}
-
-#sidebar a {
-  text-decoration: none;
-  color: red;
-  padding: 20px;
-  font-size: 80px;
-  position: relative;
-}
-
-#sidebar h1 {
-  color: white;
-  padding: 20px;
-  font-size: 80px;
-  position: relative;
-}
-
-#sidebar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-#sidebar a:hover::after {
-  transform: scaleX(1);
-}
-
-#sidebar a:hover {
-  color: white;
-}
-
-#sidebar h1{
-  border-bottom-style: double;
-}
-
-h2 {
-  font-size: 18px;
-}
-
-.main-container{
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-  /* align-items: center; */
-  /* margin-top: 10%; */
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10%;
-  color: white;
-  font-size: 75px;
-  padding: 10px;
-  overflow: hidden;
-}
-.athlete-content{
-  top : -50%;
-  flex-direction: row; 
-  overflow-y: scroll;
-  float : left;
-
-}
-.athlete-content-image-container{
-  display:flex;
-  flex-direction: row; 
-  flex-wrap: wrap;
-  border-bottom: solid;
-}
-.Athlete-Title h1{
-  font-size: 99px;
-  margin-top: 120px;
-  color : #fff;
-}
-.athlete-content-image-container h2{
-  font-size: 68px;
-  margin-top: 120px;
-  color : #fff;
-}
-.athlete-images{
-  font-size: 18px;
-  padding: 10px 0;
-}
-.img-size-half {
-  width: 50em;
-  height: 50em;
-  margin: 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 5px;
-} 
 
 
 /* ----------- Videos Page ---------------*/
