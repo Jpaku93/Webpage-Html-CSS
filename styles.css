@@ -15,9 +15,17 @@ nav{
   background: #1f2224;
   height: 80px;
   width: 100%;
+  font-family: serif;
   
 }
-
+label.logo {
+  color: red;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px white;
+}
 nav ul{
   float: right;
   margin-right: 20px;
@@ -74,8 +82,8 @@ nav ul li a:hover::after {
 }
 @media (max-width: 952px){
   label.logo{
-    font-size: 30px;
-    padding-left: 50px;
+    font-size: 20px;
+    padding-left: 30px;
   }
   nav ul li a{
     font-size: 16px;
@@ -112,17 +120,42 @@ nav ul li a:hover::after {
   }
 }
 /* ------------ home page -----------*/
-.logo-container {
+.logo-container-main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh; /* Optional, to make the container fill the viewport height */
 }
-.logo-container img {
+.logo-container-main img {
   position: fixed;
   max-width: 100%;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.logo-container img {
+  position: fixed;
+  max-width: 100%;
+  z-index: -999;
+  opacity: 0.3;
+  top: 30px;
+}
+.ballbg{
+  transform: translateX(55px) scale(0.42)
+}
+.manbg{
+  transform: scale(0.4);
+}
+.wordsbg{
+  transform: scale(0.8);
+  opacity: 0.3;
+  /* animation: word-spin 3s linear infinite; */
+}
 .ball{
   animation: spin 3s linear infinite; 
 }
@@ -165,7 +198,6 @@ nav ul li a:hover::after {
 .product-item {
   background-color: white;
   width: 100%; /* Set a default width for the container */
-  /* Set a maximum width for the container */
   margin: 10px; /* Use relative units for margin */
 }
 
@@ -200,7 +232,6 @@ nav ul li a:hover::after {
 
 /* ----------- About Us Page ---------------*/
 .about-content{
-  /* display: grid; */
   flex-direction: row;
   height: 90vh; /* Optional, to make the container fill the viewport height */
 }
@@ -210,7 +241,6 @@ nav ul li a:hover::after {
   font-size: 20px;
   color: white;
   text-align: left;
-  font-family: 'Roboto', sans-serif;
   
 }
 .history-container{
@@ -218,7 +248,6 @@ nav ul li a:hover::after {
   font-size: 20px;
   color: white;
   text-align: left;
-  font-family: 'Roboto', sans-serif;
   width: 80%;
 
 }
@@ -227,7 +256,6 @@ nav ul li a:hover::after {
   font-size: 20px;
   color: white;
   text-align: left;
-  font-family: 'Roboto', sans-serif;
 }
 .about-content h1{
   color: red;
