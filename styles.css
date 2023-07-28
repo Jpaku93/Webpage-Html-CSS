@@ -3,11 +3,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
+ 
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-
+  background-color: black;
 }
 
 /* ------------ nav bar -----------*/
@@ -57,11 +57,9 @@ nav ul li a::after {
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
-
 nav ul li a:hover::after {
   transform: scaleX(1); /* Change scaleX(0) to scaleX(1) to show the underline on hover */
 }
-
 .checkbtn{
   font-size: 30px;
   color: white;
@@ -71,7 +69,6 @@ nav ul li a:hover::after {
   cursor: pointer;
   display: none;
 }
-
 #check{
   display: none;
 }
@@ -97,13 +94,11 @@ nav ul li a:hover::after {
     left: 0;
     text-align: center;
     transition: all .5s;
-    
   }
   nav ul li{
     display: block;
     margin: 50px 0;
     line-height: 30px;
-    
   }
   nav ul li a{
     font-size: 20px;
@@ -114,19 +109,174 @@ nav ul li a:hover::after {
   }
   #check:checked ~ ul{
     top: 80px;
-    
   }
 }
-/* ----------- Athletes Page ---------------*/
+/* ------------ home page -----------*/
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Optional, to make the container fill the viewport height */
+}
+.logo-container img {
+  position: fixed;
+  max-width: 100%;
+}
 
-.gall{
-  width: 100%;
-  height: 100%;
+.ball{
+  animation: spin 3s linear infinite; 
+}
+.man {
+  transform: scale(0.4);
+}
+.words {
+  transform: scale(0.8);
+  /* animation: word-spin 3s linear infinite; */
+}
+
+/* Define the keyframes for the spinning animation */
+@keyframes spin {
+  from {
+    transform: translateX(55px) rotate(0deg) scale(0.42);
+  }
+  to {
+    transform: translateX(55px) rotate(360deg) scale(0.42);
+  }
+}
+/* Define the keyframes for the spinning animation */
+@keyframes word-spin {
+  from {
+    transform: rotate(0deg) scale(0.8);
+  }
+  to {
+    transform: rotate(360deg) scale(0.8); 
+  }
+}
+
+/* --------------- merchandise page ---------------*/
+.product-container {
+  margin: 50px 50px;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 3px 3px;
+  flex-direction: row;
+}
+
+.product-item {
+  background-color: white;
+  width: 100%; /* Set a default width for the container */
+  /* Set a maximum width for the container */
+  margin: 10px; /* Use relative units for margin */
+}
 
 
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 100%; /* Use relative width to adjust the image size */
+  height: 350px; /* Maintain aspect ratio */
+  margin: 10px 0;
+}
+
+.product-description {
+  font-size: 16px; /* Use relative font size for description */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.add-to-cart {
+  background-color: rgb(28, 29, 29);
+  color: white;
+  border: none;
+  padding: 5px 10px; /* Use relative padding for the "Add to Cart" button */
+  margin: 10px 0;
+  font-size: 16px; /* Use relative font size for the button */
+  cursor: pointer;
+}
+
+/* ----------- About Us Page ---------------*/
+.about-content{
+  /* display: grid; */
+  flex-direction: row;
+  height: 90vh; /* Optional, to make the container fill the viewport height */
+}
+
+.about-us{
+  margin: 50px 50px;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  
+}
+.history-container{
+  margin: 50px 50px;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  width: 80%;
 
 }
+.contact-container{
+  margin: 50px 50px;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+.about-content h1{
+  color: red;
+  font-family: serif;
+  text-align: left;
+}
+
+.contact-container a1 {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+.contact-container a1:hover {
+  color: red; /* Change the text color on hover */
+}
+.contact-container i {
+  margin-right: 10px;
+}
+.contact-container i:hover {
+  color: greenyellow;
+}
+/* ----------- Videos Page ---------------*/
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.carousel-item {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.carousel-item img {
+  width: 100px;
+  height: auto;
+}
+.main-frame {
+  margin-top: 10px;
+}
+
+/* ----------- Athletes Page ---------------*/
 .athlete-gallery{
   width: 80%;
   margin: 100px auto;
@@ -144,8 +294,6 @@ img {
   transform: scale(1.05);
   border-radius: 20px;
   cursor: pointer;
-
- 
 }
 .full-img{
   width:100%;
@@ -182,192 +330,4 @@ img {
   z-index: 100;
   /* transition: all 0.5s ease; */
   float:right;
-}
-
-
-/* ------------ home page -----------*/
-.image-container {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-}
-
-.spinning-ball {
-  position: absolute;
-  top: 49%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  animation: spin 4s infinite linear;
-}
-
-.scaled-man {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.8);
-}
-.product-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 10%;
-}
-
-.product-item {
-  background-color: white;
-  padding: 20px;
-  text-align: center;
-  height: 1600px; /* Set a fixed height for each container */
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px; /* Add margin-bottom to create gaps between containers */
-
-}
-
-.product-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70%; /* Adjust the height of the image container */
-}
-
-.product-image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.product-description {
-  font-size: 66px;
-  margin-top: 20px; /* Increase the margin-top value for more space between image and description */
-}
-
-
-.add-to-cart {
-  background-color: rgb(28, 29, 29);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 66px;
-  cursor: pointer;
-}
-
-/* ----------- About Us Page ---------------*/
-
-.about-container {
-  width: 75%;
-  max-width: 2400px;
-  margin: 10% auto; /* Adjust the margin as desired */
-  color: white;
-  font-size: 75px;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.about-container h1 {
-  color: red;
-  font-family: serif;
-  text-align: left;
-}
-
-.about-container img {
-  width: 35%;
-  height: auto;
-  object-fit: contain;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px; /* Add margin-bottom to create space below the image */
-}
-
-.history-container {
-  width: 75%;
-  max-width: 2400px;
-  margin: 10% auto; /* Adjust the margin as desired */
-  color: white;
-  font-size: 75px;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.history-container h1 {
-  color: red;
-  font-family: serif;
-  text-align: left;
-}
-.contact-container {
-  width: 75%;
-  max-width: 2400px;
-  margin: 10% auto;
-  color: white;
-  font-size: 75px;
-  padding: 20px;
-}
-
-.contact-container h1 {
-  color: red;
-  font-family: serif;
-  text-align: left;
-}
-
-.contact-container a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 10px;
-  transition: color 0.3s ease-in-out; /* Add transition for smooth effect */
-}
-
-.contact-container a:hover {
-  color: red; /* Change the text color on hover */
-}
-
-.contact-container i {
-  margin-right: 10px;
-}
-
-
-/* ----------- Videos Page ---------------*/
-.carousel-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.carousel-item {
-  margin: 10px 0;
-  cursor: pointer;
-}
-
-.carousel-item img {
-  width: 100px;
-  height: auto;
-}
-
-.main-frame {
-  margin-top: 10px;
-}
-
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1.8);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg) scale(1.8);
-  }
 }
