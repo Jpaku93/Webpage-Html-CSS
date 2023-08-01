@@ -345,14 +345,15 @@ iframe {
   flex-direction: column;
   width: 50%;
 }
-h1{
+.athlete-body h1{
   color: red;
   font-family: serif;
   text-align: center;
-  background-color: rgb(61, 55, 55);
+  background-color: rgb(167, 165, 165);
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
+  border: 2px solid rgb(211, 111, 111);
   
 }
 .athlete-gallery {
