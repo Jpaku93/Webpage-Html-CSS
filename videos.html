@@ -4,8 +4,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+  <script src="https://www.youtube.com/player_api"></script>
 </head>
 
 <body>
@@ -37,7 +36,7 @@
 
 
   <div class="vid-container">
-    <div class="box box1">
+    <div class="box vid-box1">
       <!-- <h2>Featured Video</h2> -->
       <div class="video-item">
         <iframe class="vid-iframe" id="videoFrame1" src="https://www.youtube.com/embed/Tas2VlQZRLY"
@@ -203,7 +202,7 @@
       </div>
     </div>
     
-    <div class="box box2">
+    <div class="box vid-box2">
       <!-- <h2>Videos</h2> -->
       <div class="video-image">
         <img src="https://i.ytimg.com/vi/Tas2VlQZRLY/mqdefault.jpg" alt="Video 1" class="video-thumbnail"
@@ -370,21 +369,29 @@
   </div>
 
   <script>
+    currentVideo = null;
+
+    // stop video
+
     function playVideo(videoId) {
       // Hide all videos
       var videos = document.getElementsByTagName('iframe');
       for (var i = 0; i < videos.length; i++) {
+        if (currentVideo && videos[i] == currentVideo) currentVideo.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
         videos[i].style.display = 'none';
+        
       }
-
+ 
       // Show the selected video
       var videoFrame = document.getElementById(videoId);
       if (videoFrame) {
         videoFrame.style.display = 'block';
       }
+      currentVideo = videoFrame;
     }
   playVideo('videoFrame1')
   </script>
+  
 </body>
 
 </html>
